@@ -1,0 +1,50 @@
+{
+  "name": "bemmy",
+  "version": "1.0.0",
+  "description": "BEM class name composer",
+  "author": {
+    "name": "Kyle Payne",
+    "url": "https://github.com/motogoozy"
+  },
+  "license": "ISC",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/motogoozy/bemmy.git"
+  },
+  "homepage": "https://github.com/motogoozy/bemmy#readme",
+  "bugs": {
+    "url": "https://github.com/motogoozy/bemmy/issues"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "npm run clean && npm run build:cjs && npm run build:mjs",
+    "build:cjs": "tsc --project ./tsconfig.cjs.json && mv dist/cjs/index.js dist/index.cjs && rm -rf dist/cjs",
+    "build:mjs": "tsc",
+    "clean": "rm -rf dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  },
+  "keywords": [
+    "BEM",
+    "CSS",
+    "class",
+    "classname",
+    "classes",
+    "classnames"
+  ]
+}
