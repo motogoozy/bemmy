@@ -34,9 +34,11 @@
     "build:cjs": "tsc --project ./tsconfig.cjs.json && mv dist/cjs/index.js dist/index.cjs && rm -rf dist/cjs",
     "build:mjs": "tsc",
     "clean": "rm -rf dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx playwright test"
   },
   "devDependencies": {
+    "@playwright/test": "^1.45.2",
+    "@types/node": "^20.14.11",
     "typescript": "^5.5.3"
   },
   "keywords": [
