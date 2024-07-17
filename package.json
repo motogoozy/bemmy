@@ -1,7 +1,7 @@
 {
   "name": "bemmy",
   "version": "1.0.0",
-  "description": "BEM class name composer",
+  "description": "Dependency-free utility to compose CSS classnames following the BEM convention.",
   "author": {
     "name": "Kyle Payne",
     "url": "https://github.com/motogoozy"
