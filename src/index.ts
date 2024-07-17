@@ -1,4 +1,4 @@
-type Modifiers = string | (string | boolean | null | undefined)[] | Record<string, boolean> | null;
+type Modifiers = string | (string | null | undefined)[] | Record<string, boolean> | null;
 
 /**
  * Creates and returns a function to format CSS classes following the {@link http://getbem.com/naming|BEM Convention}
