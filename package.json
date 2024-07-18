@@ -1,6 +1,6 @@
 {
   "name": "bemmy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Dependency-free utility to compose CSS classnames following the BEM convention.",
   "author": {
     "name": "Kyle Payne",
