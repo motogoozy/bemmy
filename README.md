@@ -17,40 +17,28 @@ import bemmy from 'bemmy';
 
 const bem = bemmy('component')
 
-// block
-bem()
+bem() // block
 // -> 'component'
 
-// block + element
-bem('content')
+bem('content') // block + element
 // -> 'component__content'
 
-// block + modifier
-bem(null, 'disabled')
+bem(null, 'disabled') // block + modifier
 // -> 'component component--disabled'
 
-// block + element + modifier
-bem('content', 'disabled')
+bem('content', 'disabled') // block + element + modifier
 // -> 'component__content component__content--disabled'
 
-// multiple modifiers (object or array)
-bem('content', { tall: true, green: true })
-// -> 'component__content component__content--tall component__content--green'
-bem('content', ['tall', 'green'])
+bem('content', { tall: true, green: true }) // modifier object
 // -> 'component__content component__content--tall component__content--green'
 
-// dynamic modifiers
-const props = {
-  tall: false,
-  green: undefined,
-  wide: true
-  custom: 1 > 2 // some expression that resolves to true or false
-};
-bem('content', props)
+bem('content', ['tall', 'green']) // modifier array
+// -> 'component__content component__content--tall component__content--green'
+
+bem('content', { tall: false, green: undefined, wide: true custom: 1 > 2 }) // dynamic modifiers
 // -> 'component__content component__content--wide'
 
-// additional classes
-bem(null, null, 'some-class', 'another-class')
+bem(null, null, 'some-class', 'another-class') // // additional classes
 // -> 'component some-class another-class'
 ```
 
