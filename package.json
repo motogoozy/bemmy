@@ -47,6 +47,20 @@
     "class",
     "classname",
     "classes",
-    "classnames"
+    "classnames",
+    "composer",
+    "generator",
+    "maker",
+    "style",
+    "styles",
+    "javascript",
+    "js",
+    "jsx",
+    "typescript",
+    "ts",
+    "tsx",
+    "react",
+    "node",
+    "nodejs"
   ]
 }
