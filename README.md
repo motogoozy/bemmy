@@ -23,11 +23,11 @@ bem(); // block
 bem('content'); // block + element
 // -> 'component__content'
 
-bem(null, 'disabled'); // block + modifier
-// -> 'component component--disabled'
+bem(null, 'tall'); // block + modifier
+// -> 'component component--tall'
 
-bem('content', 'disabled'); // block + element + modifier
-// -> 'component__content component__content--disabled'
+bem('content', 'tall'); // block + element + modifier
+// -> 'component__content component__content--tall'
 
 bem('content', { tall: true, green: false }); // modifier object
 // -> 'component__content component__content--tall
@@ -35,6 +35,6 @@ bem('content', { tall: true, green: false }); // modifier object
 bem('content', ['tall']); // modifier array
 // -> 'component__content component__content--tall'
 
-bem(null, null, 'some-class', 'another-class'); // // additional classes
+bem(null, null, 'some-class', 'another-class'); // additional classes
 // -> 'component some-class another-class'
 ```
