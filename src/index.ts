@@ -6,7 +6,7 @@ type Modifiers = string | (string | null | undefined)[] | Record<string, boolean
  * @returns {(element?: string, modifiers?: string | Array.<string> | object, ...additionalClasses?:string) => string} Function that accepts {@link https://getbem.com/naming/#Block:~:text=block%20%7B%20color%3A%20%23042%3B%20%7D-,Element,-Parts%20of%20a|element} / {@link https://getbem.com/naming/#Block:~:text=%23042%3B%20%7D-,Modifier,-Flags%20on%20blocks|modifier} name arguments
  * @example
  * ```ts
- * import bemmy from '~/utils/utils';
+ * import bemmy from 'bemmy';
  * const bem = bemmy('component')
  *
  * // block
