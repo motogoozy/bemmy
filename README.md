@@ -5,7 +5,7 @@ Dependency-free utility to compose CSS classnames following the [BEM](https://ge
 ## Installation
 
 ```bash
-# TODO
+npm install bemmy
 ```
 
 ## Usage
@@ -40,10 +40,4 @@ bem('content', { tall: false, green: undefined, wide: true custom: 1 > 2 }) // d
 
 bem(null, null, 'some-class', 'another-class') // // additional classes
 // -> 'component some-class another-class'
-```
-
-### Real-world example (React component)
-
-```ts
-// TODO (w/ CSS file showing classes)
 ```
