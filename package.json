@@ -30,7 +30,7 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "npm run eslint && npm run prettier && npm run clean && npm run build:cjs && npm run build:mjs",
+    "build": "npm run lint && npm run prettier && npm run clean && npm run build:cjs && npm run build:mjs",
     "build:cjs": "tsc --project ./tsconfig.cjs.json && mv dist/cjs/index.js dist/index.cjs && rm -rf dist/cjs",
     "build:mjs": "tsc",
     "clean": "rm -rf dist",
