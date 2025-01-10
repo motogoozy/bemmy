@@ -35,12 +35,16 @@ test.describe('bemmy', () => {
   test('adds modifier classes from array', async () => {
     const variable = 'amazing';
     const className = bem('element', ['tall', variable, 'green']);
-    expect(className).toEqual('test__element test__element--tall test__element--amazing test__element--green');
+    expect(className).toEqual(
+      'test__element test__element--tall test__element--amazing test__element--green',
+    );
   });
 
   test('adds modifier classes from object', async () => {
     const className = bem('element', { tall: true, green: true });
-    expect(className).toEqual('test__element test__element--tall test__element--green');
+    expect(className).toEqual(
+      'test__element test__element--tall test__element--green',
+    );
   });
 
   test('adds modifier class to block when no element is present', async () => {

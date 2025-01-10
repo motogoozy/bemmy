@@ -1,4 +1,8 @@
-type Modifiers = string | (string | null | undefined)[] | Record<string, boolean> | null;
+type Modifiers =
+  | string
+  | (string | null | undefined)[]
+  | Record<string, boolean>
+  | null;
 
 /**
  * Creates and returns a function to format CSS classes following the {@link http://getbem.com/naming|BEM Convention}
@@ -7,29 +11,29 @@ type Modifiers = string | (string | null | undefined)[] | Record<string, boolean
  * @example
  * ```ts
  * import bemmy from 'bemmy';
- * 
+ *
  * const bem = bemmy('block');
- * 
+ *
  * bem();
  * // -> 'block'
- * 
+ *
  * bem('element');
  * // -> 'block__element'
- * 
+ *
  * bem(null, 'modifier');
  * // -> 'block block--modifier'
- * 
+ *
  * bem('element', 'modifier');
  * // -> 'block__element block__element--modifier'
- * 
+ *
  * // modifier object
  * bem('element', { tall: true, green: true });
  * // -> 'block__element block__element--tall block__element--green'
- * 
+ *
  * // modifier array
  * bem('element', ['tall', 'green']);
  * // -> 'block__element block__element--tall block__element--green'
- * 
+ *
  * // dynamic modifiers
  * const props = {
  *   tall: false,
@@ -38,7 +42,7 @@ type Modifiers = string | (string | null | undefined)[] | Record<string, boolean
  * };
  * bem('element', props);
  * // -> 'block__element block__element--wide'
- * 
+ *
  * // additional classes
  * bem(null, null, 'some-class', 'another-class');
  * // -> 'block some-class another-class'
@@ -46,7 +50,11 @@ type Modifiers = string | (string | null | undefined)[] | Record<string, boolean
  */
 export const bemmy =
   (block = '') =>
-  (element?: string | null, modifiers?: Modifiers, ...additionalClasses: (string | undefined)[]) => {
+  (
+    element?: string | null,
+    modifiers?: Modifiers,
+    ...additionalClasses: (string | undefined)[]
+  ) => {
     const _element = element ? `__${element}` : '';
     let _modifiers: string[] = [];
 
