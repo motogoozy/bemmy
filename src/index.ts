@@ -7,43 +7,41 @@ type Modifiers = string | (string | null | undefined)[] | Record<string, boolean
  * @example
  * ```ts
  * import bemmy from 'bemmy';
- * const bem = bemmy('component')
- *
- * // block
- * bem()
- * // -> 'component'
- *
- * // block + element
- * bem('content')
- * // -> 'component__content'
- *
- * // block + modifier
- * bem(null, 'disabled')
- * // -> 'component component--disabled'
- *
- * // block + element + modifier
- * bem('content', 'disabled')
- * // -> 'component__content component__content--disabled'
- *
- * // multiple modifiers (object or array)
- * bem('content', { tall: true, green: true })
- * // -> 'component__content component__content--tall component__content--green'
- * bem('content', ['tall', 'green'])
- * // -> 'component__content component__content--tall component__content--green'
- *
+ * 
+ * const bem = bemmy('block');
+ * 
+ * bem();
+ * // -> 'block'
+ * 
+ * bem('element');
+ * // -> 'block__element'
+ * 
+ * bem(null, 'modifier');
+ * // -> 'block block--modifier'
+ * 
+ * bem('element', 'modifier');
+ * // -> 'block__element block__element--modifier'
+ * 
+ * // modifier object
+ * bem('element', { tall: true, green: true });
+ * // -> 'block__element block__element--tall block__element--green'
+ * 
+ * // modifier array
+ * bem('element', ['tall', 'green']);
+ * // -> 'block__element block__element--tall block__element--green'
+ * 
  * // dynamic modifiers
  * const props = {
  *   tall: false,
- *   green: undefined,
- *   wide: true
- *   custom: 1 > 2 // some expression that resolves to true or false
+ *   wide: true,
+ *   custom: 1 > 2, // some expression that resolves to true or false
  * };
- * bem('content', props)
- * // -> 'component__content component__content--wide'
- *
+ * bem('element', props);
+ * // -> 'block__element block__element--wide'
+ * 
  * // additional classes
- * bem(null, null, 'some-class', 'another-class')
- * // -> 'component some-class another-class'
+ * bem(null, null, 'some-class', 'another-class');
+ * // -> 'block some-class another-class'
  * ```
  */
 export const bemmy =

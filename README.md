@@ -15,26 +15,38 @@ npm install bemmy
 ```ts
 import bemmy from 'bemmy';
 
-const bem = bemmy('component');
+const bem = bemmy('block');
 
-bem(); // block
-// -> 'component'
+bem();
+// -> 'block'
 
-bem('content'); // block + element
-// -> 'component__content'
+bem('element');
+// -> 'block__element'
 
-bem(null, 'tall'); // block + modifier
-// -> 'component component--tall'
+bem(null, 'modifier');
+// -> 'block block--modifier'
 
-bem('content', 'tall'); // block + element + modifier
-// -> 'component__content component__content--tall'
+bem('element', 'modifier');
+// -> 'block__element block__element--modifier'
 
-bem('content', { tall: true, green: false }); // modifier object
-// -> 'component__content component__content--tall
+// modifier object
+bem('element', { tall: true, green: true });
+// -> 'block__element block__element--tall block__element--green'
 
-bem('content', ['tall']); // modifier array
-// -> 'component__content component__content--tall'
+// modifier array
+bem('element', ['tall', 'green']);
+// -> 'block__element block__element--tall block__element--green'
 
-bem(null, null, 'some-class', 'another-class'); // additional classes
-// -> 'component some-class another-class'
+// dynamic modifiers
+const props = {
+  tall: false,
+  wide: true,
+  custom: 1 > 2, // some expression that resolves to true or false
+};
+bem('element', props);
+// -> 'block__element block__element--wide'
+
+// additional classes
+bem(null, null, 'some-class', 'another-class');
+// -> 'block some-class another-class'
 ```
