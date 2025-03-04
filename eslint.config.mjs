@@ -11,14 +11,7 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    ignores: [
-      'dist',
-      'blob-report',
-      'node_modules',
-      'playwright-report',
-      'playwright/.cache',
-      'test-results',
-    ],
+    ignores: ['dist', 'node_modules'],
   },
   {
     plugins: {},
