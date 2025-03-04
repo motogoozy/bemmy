@@ -1,7 +1,7 @@
-import { expect, test } from '@playwright/test';
+import { describe, expect, test } from 'vitest';
 import bemmy from '../src/index';
 
-test.describe('bemmy', () => {
+describe('bemmy', () => {
   const bem = bemmy('test');
 
   test('returns block class', async () => {
