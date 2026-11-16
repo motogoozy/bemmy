@@ -5,8 +5,11 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "outDir": "./dist",
+    "rootDir": "./src",
     "skipLibCheck": true,
-    "target": "ES6"
+    "strict": true,
+    "target": "ES6",
+    "types": []
   },
   "files": ["./src/index.ts"]
 }
